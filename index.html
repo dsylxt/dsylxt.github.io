@@ -182,7 +182,7 @@
     <pre><code>
     <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define MaxSize 10//定义最大长度</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	int data[MaxSize];//定义静态数组</span><br><span class="line">	int length;//顺序表当前长度</span><br><span class="line">&#125;SqList;</span><br><span class="line"></span><br><span class="line">void InitList(SqList&amp; L) &#123;</span><br><span class="line">	for (int i = 0;i &lt; MaxSize;i++) &#123;</span><br><span class="line">		L.data[i] = 0;//所以数据初始值为0</span><br><span class="line">	&#125;</span><br><span class="line">	L.length = 0;//顺序表初始长度为0</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">	SqList L;//声明顺序表</span><br><span class="line">	InitList(L);//调用函数，初始化顺序表</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </code><pre>
-<details>
+</details>
         
           <a class="article-more-a" href="/2022/12/02/text/#more">more >></a>
         
