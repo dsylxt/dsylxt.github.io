@@ -16,7 +16,7 @@
 <meta property="og:description" content="顺序表 静态顺序表      #include     #define MaxSize 10&#x2F;&#x2F;定义最大长度     typedef struct &amp;#123;         int data[MaxSize];&#x2F;&#x2F;定义静态数组         int length;&#x2F;&#x2F;顺序表当前长度     &amp;#125;SqList;      void InitList(SqList&amp; L) &amp;#1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-02T08:41:49.000Z">
-<meta property="article:modified_time" content="2023-01-19T11:21:33.086Z">
+<meta property="article:modified_time" content="2023-01-20T06:51:40.347Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="来了就看看呀" type="application/atom+xml">
@@ -204,10 +204,84 @@ int main() &#123;
 <p></code></pre></p>
 </details>	
     <span id="more"></span>
-动态分配
-    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#define InitSize 10;</span><br><span class="line">//定义顺序表</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	int *data;     //动态数组指针</span><br><span class="line">	int MaxSize;   //当前最大容量</span><br><span class="line">	int length;    //当前长度</span><br><span class="line">&#125;SeqList;</span><br><span class="line"></span><br><span class="line">void InitList(SeqList &amp;L) &#123;</span><br><span class="line">	L.data = (int*)malloc((L.MaxSize) * sizeof(int));//开辟容量为MaxSize的空间</span><br><span class="line">	L.length = 0;//初始化长度</span><br><span class="line">	L.MaxSize = InitSize;//最大容量为10</span><br><span class="line">&#125;</span><br><span class="line">//增加容量</span><br><span class="line">void IncreseSize(SeqList&amp; L, int len) &#123;</span><br><span class="line">	int* p = L.data;//将数组首项地址赋予*p</span><br><span class="line">	L.data = (int*)malloc((L.MaxSize + len) * sizeof(int));//增加len*sizeof(int)长度空间</span><br><span class="line">	for (int i = 0;i &lt; L.length;i++) &#123;</span><br><span class="line">		L.data[i] = p[i];//将L.data数组中的值转移到新的空间</span><br><span class="line">	&#125;</span><br><span class="line">	L.MaxSize = L.MaxSize + len;//最大长度增加</span><br><span class="line">	free(p);//释放旧存储空间</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">	SeqList L;</span><br><span class="line">	InitList(L);</span><br><span class="line">	for (int i = 0;i &lt; L.MaxSize;i++) &#123;</span><br><span class="line">		L.data[i] = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	IncreseSize(L, 5);//5=len</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-插入
-    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define MaxSize 10//定义最大长度</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	int data[MaxSize];//定义静态数组</span><br><span class="line">	int length;//顺序表当前长度</span><br><span class="line">&#125;SqList;</span><br><span class="line"></span><br><span class="line">bool ListInsert(SqList &amp;L, int i, int e) &#123;</span><br><span class="line">	if (i&lt;1 || i&gt;L.length)//判断插入位置是否合法</span><br><span class="line">		return false;</span><br><span class="line">	if (L.length &gt;= MaxSize)//同上</span><br><span class="line">		return false;</span><br><span class="line">	for (int j = L.length;j &gt;= i;j--)</span><br><span class="line">		L.data[j] = L.data[j - 1];//将i后元素后移一位</span><br><span class="line">	L.data[i - 1] = e;//插入e</span><br><span class="line">	L.length++;//使顺序表当前长度加一</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">void InitList(SqList&amp; L) &#123;</span><br><span class="line">	for (int i = 0;i &lt; MaxSize;i++) &#123;</span><br><span class="line">		L.data[i] = 0;//所以数据初始值为0</span><br><span class="line">	&#125;</span><br><span class="line">	L.length = 0;//顺序表初始长度为0</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">	SqList L;</span><br><span class="line">	InitList(L);</span><br><span class="line">	//插入元素</span><br><span class="line">	ListInsert(L, 3, 3);//在第三个位置插入3</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<details>
+<summary>动态分配</summary>
+<pre><code>
+    #include<stdio.h>
+    #include<stdlib.h>
+    #define InitSize 10;
+    //定义顺序表
+    typedef struct &#123;
+        int *data;     //动态数组指针
+        int MaxSize;   //当前最大容量
+        int length;    //当前长度
+    &#125;SeqList;
+
+<pre><code>void InitList(SeqList &amp;L) &#123;
+    L.data = (int*)malloc((L.MaxSize) * sizeof(int));//开辟容量为MaxSize的空间
+    L.length = 0;//初始化长度
+    L.MaxSize = InitSize;//最大容量为10
+&#125;
+//增加容量
+void IncreseSize(SeqList&amp; L, int len) &#123;
+    int* p = L.data;//将数组首项地址赋予*p
+    L.data = (int*)malloc((L.MaxSize + len) * sizeof(int));//增加len*sizeof(int)长度空间
+    for (int i = 0;i &lt; L.length;i++) &#123;
+        L.data[i] = p[i];//将L.data数组中的值转移到新的空间
+    &#125;
+    L.MaxSize = L.MaxSize + len;//最大长度增加
+    free(p);//释放旧存储空间
+&#125;
+int main() &#123;
+    SeqList L;
+    InitList(L);
+    for (int i = 0;i &lt; L.MaxSize;i++) &#123;
+        L.data[i] = 1;
+    &#125;
+    IncreseSize(L, 5);//5=len
+    return 0;
+&#125;
+</code></pre>
+<p></code></pre></p>
+</details>	
+
+<details>
+<summary>插入</summary>
+<pre><code>
+    #include<stdio.h>
+    #define MaxSize 10//定义最大长度
+    typedef struct &#123;
+        int data[MaxSize];//定义静态数组
+        int length;//顺序表当前长度
+    &#125;SqList;
+
+<pre><code>bool ListInsert(SqList &amp;L, int i, int e) &#123;
+    if (i&lt;1 || i&gt;L.length)//判断插入位置是否合法
+        return false;
+    if (L.length &gt;= MaxSize)//同上
+        return false;
+    for (int j = L.length;j &gt;= i;j--)
+        L.data[j] = L.data[j - 1];//将i后元素后移一位
+    L.data[i - 1] = e;//插入e
+    L.length++;//使顺序表当前长度加一
+    return true;
+&#125;
+void InitList(SqList&amp; L) &#123;
+    for (int i = 0;i &lt; MaxSize;i++) &#123;
+        L.data[i] = 0;//所以数据初始值为0
+    &#125;
+    L.length = 0;//顺序表初始长度为0
+&#125;
+int main() &#123;
+    SqList L;
+    InitList(L);
+    //插入元素
+    ListInsert(L, 3, 3);//在第三个位置插入3
+    return 0;
+&#125;
+</code></pre>
+<p></code></pre></p>
+</details>	
    
 
 <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><h3 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h3><h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><h3 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h3><h2 id="栈、堆"><a href="#栈、堆" class="headerlink" title="栈、堆"></a>栈、堆</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>贪心算法 分治算法 动态规划 回溯算法 枚举算法</p>
