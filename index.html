@@ -177,6 +177,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h3 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h3><details>
+<summary>静态顺序表</summary>
+<pre><code>
+    #include<stdio.h>
+    #define MaxSize 10//定义最大长度
+    typedef struct &#123;
+        int data[MaxSize];//定义静态数组
+        int length;//顺序表当前长度
+    &#125;SqList;
+    
+<pre><code>void InitList(SqList&amp; L) &#123;
+    for (int i = 0;i &lt; MaxSize;i++) &#123;
+        L.data[i] = 0;//所以数据初始值为0
+    &#125;
+    L.length = 0;//顺序表初始长度为0
+&#125;
+int main() &#123;
+    SqList L;//声明顺序表
+    InitList(L);//调用函数，初始化顺序表
+    return 0;
+&#125;
+</code></pre>
+<p></code></pre></p>
+</details>
+        
+          <a class="article-more-a" href="/2023/02/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/#more">more >></a>
         
       
 
