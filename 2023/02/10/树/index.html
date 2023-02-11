@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>树 | 来了就看看呀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="二叉树的遍历先序typedef struct BiTnode{ElemType data;struct BiTNode *lchild, *rchild;}BiTNode, *BiTree; void PreOrder(BiTree T){if(T!&#x3D;NULL){    visit(T);                 &#x2F;&#x2F;访问根结点（可改变访问顺序、中序、后序）">
+<meta property="og:type" content="article">
 <meta property="og:title" content="树">
 <meta property="og:url" content="http://example.com/2023/02/10/%E6%A0%91/index.html">
 <meta property="og:site_name" content="来了就看看呀">
+<meta property="og:description" content="二叉树的遍历先序typedef struct BiTnode{ElemType data;struct BiTNode *lchild, *rchild;}BiTNode, *BiTree; void PreOrder(BiTree T){if(T!&#x3D;NULL){    visit(T);                 &#x2F;&#x2F;访问根结点（可改变访问顺序、中序、后序）">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-10T09:57:03.000Z">
-<meta property="article:modified_time" content="2023-02-10T09:57:03.357Z">
+<meta property="article:modified_time" content="2023-02-11T10:49:08.479Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="来了就看看呀" type="application/atom+xml">
@@ -177,7 +179,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>二叉树的遍历<br>先序<br>typedef struct BiTnode{<br>ElemType data;<br>struct BiTNode *lchild, *rchild;<br>}BiTNode, *BiTree;</p>
+<p>void PreOrder(BiTree T){<br>if(T!&#x3D;NULL){<br>    visit(T);                 &#x2F;&#x2F;访问根结点（可改变访问顺序、中序、后序）<br>    PreOrder(T-&gt;lchild);      &#x2F;&#x2F;递归遍历左子树<br>    PreOrder(T-&gt;rchild);      &#x2F;&#x2F;递归遍历右子树<br>}<br>}</p>
+<p>层序遍历</p>
+<p>一个队列<br>层层入队</p>
+<p>typedef struct BiTnode{<br>ElemType data;<br>struct BiTNode *lchild, *rchild;<br>}BiTNode, *BiTree;</p>
+<p>&#x2F;&#x2F;链式队列结点<br>typedef struct LinkNode{<br>BiTNode * data;<br>typedef LinkNode *next;<br>}LinkNode;</p>
+<p>typedef struct{<br>LinkNode *front, *rear;<br>}LinkQueue;</p>
+<p>&#x2F;&#x2F;主函数<br>void LevelOrder(BiTree T){<br>LinkQueue Q;<br>InitQueue (Q);          &#x2F;&#x2F;初始化辅助队列<br>BiTree p;<br>EnQueue(Q,T);           &#x2F;&#x2F;将根节点入队<br>while(!isEmpty(Q)){     &#x2F;&#x2F;队列不空则循环<br>    DeQueue(Q,p);        &#x2F;&#x2F;队头结点出队<br>    visit(p);            &#x2F;&#x2F;访问出队结点<br>    if(p-&gt;lchild !&#x3D; NULL)<br>        EnQueue(Q,p-&gt;lchild);   &#x2F;&#x2F;左孩子入队<br>    if(p-&gt;rchild !&#x3D; NULL)<br>        EnQueue(Q,p-&gt;rchild);   &#x2F;&#x2F;右孩子入队<br>}<br>}</p>
+<h3 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h3><p>二叉树线索化：先序、中序、后序。</p>
+<p>typedef struct ThreadNode{<br>int data;<br>struct ThreadNode *lchild, *rchild;<br>int ltag, rtag;                &#x2F;&#x2F; 左、右线索标志<br>}ThreadNode, *ThreadTree;</p>
+<p>&#x2F;&#x2F;全局变量pre, 指向当前访问的结点的前驱<br>TreadNode *pre&#x3D;NULL;</p>
+<p>&#x2F;&#x2F;先序遍历二叉树，一边遍历一边线索化<br>void PreThread(ThreadTree T){<br>if(T!&#x3D;NULL){<br>    visit(T);<br>    if(T-&gt;ltag &#x3D;&#x3D; 0)         &#x2F;&#x2F;lchild不是前驱线索<br>        PreThread(T-&gt;lchild);<br>    PreThread(T-&gt;rchild);<br>}<br>}</p>
+<p>void visit(ThreadNode *q){<br>if(q-&gt;lchid &#x3D; NULL){                 &#x2F;&#x2F;左子树为空，建立前驱线索<br>    q-&gt;lchild &#x3D; pre;<br>    q-&gt;ltag &#x3D; 1;<br>}</p>
+<p>if(pre!&#x3D;NULL &amp;&amp; pre-&gt;rchild &#x3D; NULL){<br>    pre-&gt;rchild &#x3D; q;           &#x2F;&#x2F;建立前驱结点的后继线索<br>    pre-&gt;rtag &#x3D; 1;<br>}<br>pre &#x3D; q;<br>}</p>
+<p>&#x2F;&#x2F;先序线索化二叉树T<br>void CreateInThread(ThreadTree T){<br>pre &#x3D; NULL;                &#x2F;&#x2F;pre初始为NULL<br>if(T!&#x3D;NULL);{              &#x2F;&#x2F;非空二叉树才能进行线索化<br>    PreThread(T);            &#x2F;&#x2F;先序线索化二叉树<br>    if(pre-&gt;rchild &#x3D;&#x3D; NULL)<br>        pre-&gt;rtag&#x3D;1;         &#x2F;&#x2F;处理遍历的最后一个结点<br>}<br>}</p>
+
       
 
       
