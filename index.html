@@ -177,7 +177,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h2><p>思路： 先用折半查找找到应该插入的位置，再移动元素；</p>
+<p>为了保证稳定性，当查找到和插入元素关键字一样的元素时，应该继续在这个元素的右半部分继续查找以确认位置; 即当 A[mid] &#x3D;&#x3D; A[0] 时，应继续在mid所指位置右边寻找插入位置</p>
+<p>当low&gt;high时，折半查找停止，应将[low,i-1]or[high+1,i-1]内的元素全部右移，并将A[0]复制到low所指的位置；</p>
+<p>代码实现</p>
+<p>void InsertSort(int A[], int n){<br>    int i,j,low,high,mid;<br>    for(i&#x3D;2;i&lt;&#x3D;n;i++){<br>        A[0] &#x3D; A[i];                    &#x2F;&#x2F;将A[i]暂存到A[0]<br>        low &#x3D; 1; high &#x3D; i-1;            &#x2F;&#x2F;折半查找的范围</p>
+<pre><code>    while(low&lt;=high)&#123;               //折半查找
+        mid = (low + high)/2;       //取中间点
+        if(A[mid]&gt;A[0])             //查找左半子表
+            high = mid - 1;
+        else                        //查找右半子表
+            low = mid + 1;
+    &#125;
+    
+    for(j=i-1; j&gt;high+1;--j)       //统一后移元素，空出插入位置
+        A[j+1] = A[j];
+    A[high+1] = A[0]
+&#125;
+</code></pre>
+<p>}</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>思路： 先追求表中元素的部分有序，再逐渐逼近全局有序；</p>
+<p>更适用于基本有序的排序表和数据量不大的排序表，仅适用于线性表为顺序存储的情况</p>
+<p>代码实现：</p>
+<p>void ShellSort(ElemType A[], int n){<br>    &#x2F;&#x2F;A[0]为暂存单元<br>    for(dk&#x3D;n&#x2F;2; dk&gt;&#x3D;1; dk&#x3D;dk&#x2F;2)   &#x2F;&#x2F;步长递减（看题目要求，一般是1&#x2F;2<br>        for(i&#x3D;dk+1; i&lt;&#x3D;n; ++i)<br>            if(A[i]&lt;A[i-dk]){<br>                A[0]&#x3D;A[i];<br>                for(j&#x3D;i-dk; j&gt;0&amp;&amp;A[0]&lt;A[j];j-&#x3D;dk)<br>                    A[j+dk]&#x3D;A[j];          记录后移，查找插入的位置<br>                A[j+dk]&#x3D;A[0;]              插入<br>            }<br>}</p>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>略</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>每一趟排序都可使一个中间元素确定其最终位置<br>用一个元素（不一定是第一个）把待排序序列“划分”为两个部分，左边更小，右边更大，该元素的最终位置已确认<br>算法实现（重点）<br>&#x2F;&#x2F;用第一个元素将待排序序列划分为左右两个部分<br>int Partition(int A[], int low, int high){<br>    int pivot &#x3D; A[low];          &#x2F;&#x2F;用第一个元素作为枢轴<br>    while(low&lt;high){<br>        while(low &lt; high &amp;&amp; A[high]&gt;&#x3D;pivot) –high; &#x2F;&#x2F;high所指元素大于枢轴，high左移<br>        A[low] &#x3D; A[high];   &#x2F;&#x2F;high所指元素小于枢轴，移动到左侧</p>
+<pre><code>    while(low&lt;high &amp;&amp; A[low]&lt;=pivot)  ++low; //low所指元素小于枢轴，low右移
+    A[high] = A[low];   //low所指元素大于枢轴，移动到右侧
+&#125;
+A[low] = pivot   //枢轴元素存放到最终位置
+return low；     //返回存放枢轴的最终位置
+</code></pre>
+<p>} </p>
+<p>&#x2F;&#x2F;快速排序<br>void QuickSort(int A[], int low, int high){<br>    if(low&lt;high)    递归跳出条件<br>        int pivotpos &#x3D; Partition(A, low, high);    划分<br>        QuickSort（A, low, pivotpos - 1);     划分左子表<br>        QuickSort（A, pivotpos + 1, high);    划分右子表<br>}</p>
+<h2 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h2><p>void swap(int &amp;a, int &amp;b){<br>    int temp &#x3D; a;<br>    a &#x3D; b;<br>    b &#x3D; temp;<br>}</p>
+<p>void SelectSort(int A[], int n){       &#x2F;&#x2F;A从0开始<br>    for(int i&#x3D;0; i&lt;n-1; i++){           一共进行n-1趟，i指向待排序序列中第一个元素<br>        int min &#x3D; i;                   记录最小元素位置<br>        for(int j&#x3D;i+1; j&lt;n; j++)        在A[i…n-1]中选择最小的元素<br>            if(A[j] &lt;&gt; A [min]) min &#x3D; j;   &#x2F;&#x2F; 更新最小元素位置<br>        if(min!&#x3D;i)<br>            swao(A[i],A[min]);         &#x2F;&#x2F; 交换<br>    }<br>}</p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>把两个或多个已经有序的序列合并成一个<br>&#x2F;&#x2F;创建辅助数组B<br>int *B&#x3D;(int <em>)malloc(n</em>sizeof(int));</p>
+<p>&#x2F;&#x2F;A[low,…,mid],A[mid+1,…,high] 各自有序，将这两个部分归并<br>void Merge(int A[], int low, int mid, int high){<br>    int i,j,k;<br>    for(k&#x3D;low; k&lt;&#x3D;high; k++)<br>        B[k] &#x3D; A[k];           &#x2F;&#x2F;将A中所有元素复制到B中<br>    for(i&#x3D;low, j&#x3D;mid+1, k&#x3D;i; i&lt;&#x3D;mid &amp;&amp; j&lt;&#x3D; high; k++){<br>        if(B[i]&lt;&#x3D;B[j])          &#x2F;&#x2F;为保证稳定性两个元素相等时，优先使用靠前的那个<br>            A[k]&#x3D;B[i++];        &#x2F;&#x2F;将较小值复制到A中<br>        else<br>            A[k]&#x3D;B[j++];<br>    }&#x2F;&#x2F;for</p>
+<pre><code>//没有归并完的部分复制到尾部，while只会执行一个 
+while(i&lt;=mid)  A[k++]=B[i++];     //若第一个表未检测完，复制
+while(j&lt;=high) A[k++]=B[j++];     //若第二个表未检测完，复制
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F;递归操作<br>void MergeSort(int A[], int low, int high){<br>    if(low&lt;high){<br>        int mid &#x3D; (low+high)&#x2F;2;     从中间划分<br>        MergeSort(A, low, mid);     对左半部分归并排序<br>        MergeSort(A, mid+1, high);  对右半部分归并排序<br>        Merge(A,low,mid,high);      归并<br>    }if<br>}</p>
+
       
 
       
