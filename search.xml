@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> 大创 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -24,6 +30,12 @@
         <content type="html"><![CDATA[<h2 id="一切的开始"><a href="#一切的开始" class="headerlink" title="一切的开始"></a>一切的开始</h2><p>好像是今年四月份吧，jxy跟我谈了认证杯组队的事，我对这类比赛的了解仅仅是听说过，没有任何知识储备，她告诉我要多去尝试。也是从这时开始，一直碌碌无为的鼠鼠决定去尝试，去挑战。最后因为种种原因我们没有任何合作，但还是很感谢她。</p><p>然后五月份的校赛吧，鼠鼠主打一个参与感，没有任何准备就去参加了。结果嘛，是根本没有参赛哈哈哈，因为我报名信息没提交，幸好我的队友也根本不打算玩这个比赛，校赛什么都没发生，我就看了看题目。</p><p>校赛期间吧，基地也不少hxd也参赛了，我就到处转转。最佩服的就是贤宝了，真的一个人带动一支队伍，把俩队友当挂件。不会python就用c语言去处理矩阵，不会算法那就现学，时间不够那就都别睡了，我称之为神。</p><p>校赛你没打，那肯定连国赛的参赛资格都没有，但是没关系，我队友参加了就行。</p><p>当鼠鼠看着hxd们晋级国赛也是相对的羡慕呀，让鼠鼠能成功参赛的关键人物：zby学姐出现了，也不知道是什么原因，不知道为什么，再一次有人找我参赛，虽然我没有竞赛经验，没有拿得出手的本事，但是在我巧妙的沟通（chui niu bi）下，最后成功组队，冲击国赛。</p><h2 id="没有什么准备的准备阶段"><a href="#没有什么准备的准备阶段" class="headerlink" title="没有什么准备的准备阶段"></a>没有什么准备的准备阶段</h2><p>完全不懂算法只有一点点编程语言基础的萌新选手，想去找点入门资料，各类网站的资料五花八门，看来看去都没有满意的课程，最后又是zby发来的清风网课资料，真的是给我全程安排好了，然后就是从零开始学数模。</p><p>学习笔记什么的也在主页了，哈哈哈哈，又是半途而废的一篇，我就没有学精过某样东西。但是不管怎么样，还是学到了点东西吧，数据分析，各种预测，python，matlab什么的多少会了一点。暑假的时候我们计划好一天看一篇论文同时学习算法什么的，不知道为什么又中断了，战犯是谁我也不知道。主要是暑假各种破事太多了，根本没有好好学习，算是荒废一个暑假吧。</p><p>开学后状态回来了但又是军训期间也没学到什么，收集点资料，看看数据分析题论文，实操了一些代码吧，总感觉什么都没准备好，对论文的架构不是很清楚，实操能力也很弱。</p><h2 id="比赛开始咯"><a href="#比赛开始咯" class="headerlink" title="比赛开始咯"></a>比赛开始咯</h2><p>拿到题目后照例每题都看了遍，一开始也有过选B题的想法，但是感觉不熟悉且没什么知识储备还是放弃了，决定做熟悉的数据分析。</p><h4 id="做题过程"><a href="#做题过程" class="headerlink" title="做题过程"></a>做题过程</h4><p>一打开就是87w行的超大电子表格，四个附件轮着切换真的是头晕眼花，第一个晚上给各类商品匹配编号，销量，价格，不知不觉一个晚上就过去了。</p><p>第二天一大早就拿着匹配好的数据去题，然后发现根本找不到合适的模型，各种异常值也是非常难以处理，以为是数据出问题又从新洗数据。那几天光是洗数据的时间保守估计得有二十小时。<br>基本是软件的操作和代码都是现学现用，全程面对GPT和百度处理数据，excle的函数，matlab代码，spss变量替换……还有各种bug和软件崩溃是真的很烦。</p><p>写累了就出去转转，困了就睡会，饿了就吃几个小面包，时间过得很快。我感觉在场的选手都是在发疯的边缘，自己幸幸苦苦处理的数据也没法得到满意的结果。这三天基本是没怎么见过太阳，晚上一两点回去一大早又继续写题，我也不知道怎么坚持下来的，有一种很亢奋的感觉。</p><h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>鏖战三天也没有把题目做得很好，最后也是东拼西凑把论文给写完了，粗略看起来还像点样子，lyh也是跟GPT聊了两天，我也没仔细看最后结果怎么样，希望他的遗传算法能有好的效果。交了论文后连呼吸都变得通畅，所有的疲惫都在这一刻涌上来。然后就是感觉就是很饿，已经一天多没有正常吃饭了，从基地出来又遇上大雨，真的是百感交集。</p><p>这次比赛怎么说呢，我应该是休息最多的吧。俩队友从第二天早上开始就没怎么休息过，lzx三天就睡了不到十小时，总是有人比你更努力。</p><p>毛概课上跟贤宝聊了很久，题目确实有难度，数据不好弄，相关性极弱非常的反常。我一直觉得lzx准备如此充分应该能有不错的结果，不管怎样，我感觉他的论文比我们的更好。</p><h3 id="挺迷茫的"><a href="#挺迷茫的" class="headerlink" title="挺迷茫的"></a>挺迷茫的</h3><p>鼠鼠大一进基地后就开始尝试各种方向，可惜都没有拿得出手的结果，东搞西搞成绩还不好，心不专一终究难成大事。</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 记忆碎片 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -40,7 +52,7 @@
       
         <tags>
             
-            <tag> /img/001.jpg </tag>
+            <tag> 记忆碎片 </tag>
             
         </tags>
       
@@ -83,6 +95,12 @@
       
       
       
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -95,6 +113,12 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -109,6 +133,12 @@
       
       
       
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -122,6 +152,12 @@
       
       
       
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -134,6 +170,12 @@
         <content type="html"><![CDATA[<h3 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h3><details><summary>静态顺序表</summary><pre><code>    #include<stdio.h>    #define MaxSize 10//定义最大长度    typedef struct &#123;        int data[MaxSize];//定义静态数组        int length;//顺序表当前长度    &#125;SqList;    <pre><code>void InitList(SqList&amp; L) &#123;    for (int i = 0;i &lt; MaxSize;i++) &#123;        L.data[i] = 0;//所以数据初始值为0    &#125;    L.length = 0;//顺序表初始长度为0&#125;int main() &#123;    SqList L;//声明顺序表    InitList(L);//调用函数，初始化顺序表    return 0;&#125;</code></pre><p></code></pre></p></details>    <span id="more"></span><details><summary>动态分配</summary><pre><code>    #include<stdio.h>    #include<stdlib.h>    #define InitSize 10;    //定义顺序表    typedef struct &#123;        int *data;     //动态数组指针        int MaxSize;   //当前最大容量        int length;    //当前长度    &#125;SeqList;<pre><code>void InitList(SeqList &amp;L) &#123;    L.data = (int*)malloc((L.MaxSize) * sizeof(int));//开辟容量为MaxSize的空间    L.length = 0;//初始化长度    L.MaxSize = InitSize;//最大容量为10&#125;//增加容量void IncreseSize(SeqList&amp; L, int len) &#123;    int* p = L.data;//将数组首项地址赋予*p    L.data = (int*)malloc((L.MaxSize + len) * sizeof(int));//增加len*sizeof(int)长度空间    for (int i = 0;i &lt; L.length;i++) &#123;        L.data[i] = p[i];//将L.data数组中的值转移到新的空间    &#125;    L.MaxSize = L.MaxSize + len;//最大长度增加    free(p);//释放旧存储空间&#125;int main() &#123;    SeqList L;    InitList(L);    for (int i = 0;i &lt; L.MaxSize;i++) &#123;        L.data[i] = 1;    &#125;    IncreseSize(L, 5);//5=len    return 0;&#125;</code></pre><p></code></pre></p></details><details><summary>插入</summary><pre><code>    #include<stdio.h>    #define MaxSize 10//定义最大长度    typedef struct &#123;        int data[MaxSize];//定义静态数组        int length;//顺序表当前长度    &#125;SqList;<pre><code>bool ListInsert(SqList &amp;L, int i, int e) &#123;    if (i&lt;1 || i&gt;L.length)//判断插入位置是否合法        return false;    if (L.length &gt;= MaxSize)//同上        return false;    for (int j = L.length;j &gt;= i;j--)        L.data[j] = L.data[j - 1];//将i后元素后移一位    L.data[i - 1] = e;//插入e    L.length++;//使顺序表当前长度加一    return true;&#125;void InitList(SqList&amp; L) &#123;    for (int i = 0;i &lt; MaxSize;i++) &#123;        L.data[i] = 0;//所以数据初始值为0    &#125;    L.length = 0;//顺序表初始长度为0&#125;int main() &#123;    SqList L;    InitList(L);    //插入元素    ListInsert(L, 3, 3);//在第三个位置插入3    return 0;&#125;</code></pre><p></code></pre></p></details>   <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">基本结构</span><br><span class="line">typedef struct LNode &#123;</span><br><span class="line">int data;</span><br><span class="line">struct LNode* next; //指向下一个结构体。</span><br><span class="line">&#125;LNode, * LinkList;</span><br><span class="line"></span><br><span class="line">初始化</span><br><span class="line">void InitList(LinkList &amp;L)&#123;</span><br><span class="line">L = (LNode *)malloc(sizeof(LinkList));申请头指针的内存</span><br><span class="line">L-&gt;next = NULL; 将头指针置空</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">尾插法建立单链表</span><br><span class="line">LinkList TailInsert(LinkList &amp;L)&#123;</span><br><span class="line">InitList(L);</span><br><span class="line">LNode *s,*r=L;</span><br><span class="line">int x;</span><br><span class="line">cin&gt;&gt;x;</span><br><span class="line">while(x!=9999)&#123;</span><br><span class="line">s = (LNode *)malloc(sizeof(LNode));</span><br><span class="line">s-&gt;data = x;</span><br><span class="line">r-&gt;next = s;</span><br><span class="line">r = s;</span><br><span class="line">cin&gt;&gt;x;</span><br><span class="line">&#125;</span><br><span class="line">r-&gt;next = NULL;</span><br><span class="line">return L;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">头插法建立单链表</span><br><span class="line">LinkList HeadInsert(LinkList &amp;L)&#123;</span><br><span class="line">InitList(L); //初始化</span><br><span class="line">int x;</span><br><span class="line">cin&gt;&gt;x;</span><br><span class="line">while(x!=9999)&#123; </span><br><span class="line">LNode *s = (LNode *)malloc(sizeof(LNode));</span><br><span class="line">s-&gt;data = x;</span><br><span class="line">s-&gt;next = L-&gt;next;</span><br><span class="line">L-&gt;next = s;</span><br><span class="line">cin&gt;&gt;x;</span><br><span class="line">&#125;</span><br><span class="line">return L;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">遍历单链表</span><br><span class="line">void PrintList(LinkList L) &#123;</span><br><span class="line">LNode* p = L-&gt;next;</span><br><span class="line">while (p) &#123; //当p指向NULL跳出循环。</span><br><span class="line">cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">求链表长度</span><br><span class="line">int Length(LinkList L)&#123;</span><br><span class="line">LNode *p = L-&gt;next;</span><br><span class="line">int len = 0;</span><br><span class="line">while(p)&#123;</span><br><span class="line">len++; //每读取一个节点len自增。</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">return len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">按值查找</span><br><span class="line">LNode *LocateElem(LinkList L, int x)&#123;</span><br><span class="line">LNode *p = L-&gt;next;</span><br><span class="line">while(p &amp;&amp; p-&gt;data != x)&#123;</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">按位查找</span><br><span class="line">LNode *GetElem(LinkList L, int i)&#123;</span><br><span class="line">int j=1;</span><br><span class="line">LNode *p = L-&gt;next;</span><br><span class="line">if(i==0)return L;</span><br><span class="line">if(i&lt;1)return NULL;</span><br><span class="line">while(p &amp;&amp; j&lt;i)&#123;</span><br><span class="line">p = p-&gt;next;</span><br><span class="line">j++;</span><br><span class="line">&#125;</span><br><span class="line">return p; // 如果i大于表长，p=NULL，将返回p</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">插入</span><br><span class="line">void Insert(LinkList &amp;L, int i, int x)&#123;</span><br><span class="line">LNode *p = GetElem(L,i-1);</span><br><span class="line">LNode *s = (LNode *)malloc(sizeof(LNode));</span><br><span class="line">s-&gt;data = x;</span><br><span class="line">s-&gt;next = p-&gt;next;</span><br><span class="line">p-&gt;next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">删除</span><br><span class="line">void Delete(LinkList &amp;L, int i)&#123;</span><br><span class="line">if(i&lt;1 || i&gt;Length(L))</span><br><span class="line">cout&lt;&lt;&quot;delete failed: index is wrong.&quot;&lt;&lt;endl;</span><br><span class="line">return;</span><br><span class="line">LNode *p = GetElem(L,i-1);</span><br><span class="line">LNode *q = p-&gt;next;</span><br><span class="line">p-&gt;next = q-&gt;next;</span><br><span class="line">free(q);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">判空</span><br><span class="line">bool Empty(LinkList L)&#123;</span><br><span class="line">    if(L-&gt;next == NULL)&#123;</span><br><span class="line">        cout&lt;&lt;&quot;L is null&quot;&lt;&lt;endl;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">else&#123;</span><br><span class="line">        cout &lt;&lt;&quot;L is not null&quot;&lt;&lt;endl;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
       
     </entry>
     
