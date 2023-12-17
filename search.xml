@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>青丝与千纸鹤</title>
+      <link href="/2023/12/17/%E9%9D%92%E4%B8%9D%E4%B8%8E%E5%8D%83%E7%BA%B8%E9%B9%A4/"/>
+      <url>/2023/12/17/%E9%9D%92%E4%B8%9D%E4%B8%8E%E5%8D%83%E7%BA%B8%E9%B9%A4/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>项目展示</title>
       <link href="/2023/11/11/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"/>
       <url>/2023/11/11/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/</url>
@@ -66,7 +79,7 @@
       <link href="/2023/09/21/%E5%8F%98%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E4%BF%A1%E6%81%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B9%E6%B3%95/"/>
       <url>/2023/09/21/%E5%8F%98%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E7%89%A9%E7%90%86%E4%BF%A1%E6%81%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h2 id="基本理论"><a href="#基本理论" class="headerlink" title="基本理论"></a>基本理论</h2><p>本质上依然是神经网络，但是又把物理方程作为限制加入神经网络中使训练的结果满足物理规律。通过把物理方程的迭代前后的差值加到神经网络的损失函数里面去，让物理方程也“参与”到了训练过程。这样，神经网络在训练迭代时候优化的不仅仅是网络自己的损失函数，还有物理方程每次迭代的差，使得最后训练出来的结果就满足物理规律。</p><pre><code>import torchimport numpy as npimport matplotlib.pyplot as pltimport torch.nn as nnimport torch.optim as optim# 创建一个简单的偏微分方程def true_solution(x):    return np.sin(np.pi * x)def pde(x, u, du_dx):    return -torch.exp(u) * du_dx - torch.sin(np.pi * x)# 生成训练数据x_train = np.random.rand(100, 1)u_true = true_solution(x_train)du_dx_true = np.pi * np.cos(np.pi * x_train)f_true = pde(x_train, u_true, du_dx_true)x_train = torch.from_numpy(x_train).float()u_true = torch.from_numpy(u_true).float()du_dx_true = torch.from_numpy(du_dx_true).float()f_true = torch.from_numpy(f_true).float()# 构建 PINN 模型class PINN(nn.Module):    def __init__(self):        super(PINN, self).__init__()        self.net = nn.Sequential(            nn.Linear(1, 50),            nn.Tanh(),            nn.Linear(50, 50),            nn.Tanh(),            nn.Linear(50, 1),        )        def forward(self, x):        return self.net(x)# 训练 PINN 模型model = PINN()optimizer = optim.Adam(model.parameters(), lr=0.001)criterion = nn.MSELoss()epochs = 5000for epoch in range(epochs):    optimizer.zero_grad()    u_pred = model(x_train)    du_dx_pred = torch.autograd.grad(u_pred, x_train, grad_outputs=torch.ones_like(u_pred), create_graph=True)[0]    f_pred = pde(x_train, u_pred, du_dx_pred)    loss = criterion(u_pred, u_true) + criterion(f_pred, f_true)    loss.backward()    optimizer.step()        if epoch % 100 == 0:        print(f&quot;Epoch [&#123;epoch&#125;/&#123;epochs&#125;], Loss: &#123;loss.item()&#125;&quot;)# 可视化结果x_test = np.linspace(0, 1, 100).reshape(-1, 1)x_test = torch.from_numpy(x_test).float()u_pred = model(x_test).detach().numpy()plt.figure(figsize=(12, 5))plt.plot(x_test, u_pred, label=&#39;Predicted&#39;)plt.plot(x_test, true_solution(x_test), label=&#39;True&#39;)plt.xlabel(&#39;x&#39;)plt.ylabel(&#39;u&#39;)plt.legend()plt.show()</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="基本理论"><a href="#基本理论" class="headerlink" title="基本理论"></a>基本理论</h2><p>本质上依然是神经网络，但是又把物理方程作为限制加入神经网络中使训练的结果满足物理规律。通过把物理方程的迭代前后的差值加到神经网络的损失函数里面去，让物理方程也“参与”到了训练过程。这样，神经网络在训练迭代时候优化的不仅仅是网络自己的损失函数，还有物理方程每次迭代的差，使得最后训练出来的结果就满足物理规律。</p><h2 id="网上抄的小例子"><a href="#网上抄的小例子" class="headerlink" title="网上抄的小例子"></a>网上抄的小例子</h2><pre><code>import torchimport numpy as npimport matplotlib.pyplot as pltimport torch.nn as nnimport torch.optim as optim# 创建一个简单的偏微分方程def true_solution(x):    return np.sin(np.pi * x)def pde(x, u, du_dx):    return -torch.exp(u) * du_dx - torch.sin(np.pi * x)# 生成训练数据x_train = np.random.rand(100, 1)u_true = true_solution(x_train)du_dx_true = np.pi * np.cos(np.pi * x_train)f_true = pde(x_train, u_true, du_dx_true)x_train = torch.from_numpy(x_train).float()u_true = torch.from_numpy(u_true).float()du_dx_true = torch.from_numpy(du_dx_true).float()f_true = torch.from_numpy(f_true).float()# 构建 PINN 模型class PINN(nn.Module):    def __init__(self):        super(PINN, self).__init__()        self.net = nn.Sequential(            nn.Linear(1, 50),            nn.Tanh(),            nn.Linear(50, 50),            nn.Tanh(),            nn.Linear(50, 1),        )        def forward(self, x):        return self.net(x)# 训练 PINN 模型model = PINN()optimizer = optim.Adam(model.parameters(), lr=0.001)criterion = nn.MSELoss()epochs = 5000for epoch in range(epochs):    optimizer.zero_grad()    u_pred = model(x_train)    du_dx_pred = torch.autograd.grad(u_pred, x_train, grad_outputs=torch.ones_like(u_pred), create_graph=True)[0]    f_pred = pde(x_train, u_pred, du_dx_pred)    loss = criterion(u_pred, u_true) + criterion(f_pred, f_true)    loss.backward()    optimizer.step()        if epoch % 100 == 0:        print(f&quot;Epoch [&#123;epoch&#125;/&#123;epochs&#125;], Loss: &#123;loss.item()&#125;&quot;)# 可视化结果x_test = np.linspace(0, 1, 100).reshape(-1, 1)x_test = torch.from_numpy(x_test).float()u_pred = model(x_test).detach().numpy()plt.figure(figsize=(12, 5))plt.plot(x_test, u_pred, label=&#39;Predicted&#39;)plt.plot(x_test, true_solution(x_test), label=&#39;True&#39;)plt.xlabel(&#39;x&#39;)plt.ylabel(&#39;u&#39;)plt.legend()plt.show()</code></pre>]]></content>
       
       
       
